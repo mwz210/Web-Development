@@ -3,9 +3,9 @@
 All the projects I have done related to Web Development
 
 ### Projects Descriptions ###
------------------------------
-
 **Note: Some projects are still in progress**
+---------------------------------------------
+
 * **MKV Practice Tool:** 
 
   A webpage for users that want to learn how to play music from videos more efficiently and effectively.
