@@ -1,0 +1,413 @@
+
+
+
+
+.vjs-marker {
+  position: absolute;
+  left: 0;
+  bottom: 0em;
+  opacity: 1;
+  height: 100%;
+  transition: opacity .2s ease;
+  -webkit-transition: opacity .2s ease;
+  -moz-transition: opacity .2s ease;
+  z-index: 100;
+}
+.vjs-marker:hover {
+  cursor: pointer;
+  -webkit-transform: scale(1.3, 1.3);
+  -moz-transform: scale(1.3, 1.3);
+  -o-transform: scale(1.3, 1.3);
+  -ms-transform: scale(1.3, 1.3);
+  transform: scale(1.3, 1.3);
+}
+.vjs-tip {
+  visibility: hidden;
+  display: block;
+  opacity: 0.8;
+  padding: 5px;
+  font-size: 10px;
+  position: absolute;
+  bottom: 14px;
+  z-index: 100000;
+}
+.vjs-tip .vjs-tip-arrow {
+  background: url(data:image/gif;base64,R0lGODlhCQAJAIABAAAAAAAAACH5BAEAAAEALAAAAAAJAAkAAAIRjAOnwIrcDJxvwkplPtchVQAAOw==) no-repeat top left;
+  bottom: 0;
+  left: 50%;
+  margin-left: -4px;
+  background-position: bottom left;
+  position: absolute;
+  width: 9px;
+  height: 5px;
+  font-family: "Allerta";
+}
+.vjs-tip .vjs-tip-inner {
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  padding: 5px 8px 4px 8px;
+  background-color: black;
+  color: white;
+  max-width: 200px;
+  text-align: center;
+}
+.vjs-break-overlay {
+  visibility: hidden;
+  position: absolute;
+  z-index: 100000;
+  top: 0;
+}
+.vjs-break-overlay .vjs-break-overlay-text {
+  padding: 9px;
+  text-align: center;
+}
+
+.special-blue{
+  background-color: blue !important;
+}
+
+.special-orange{
+  background-color: orange !important;
+}
+
+.special-purple{
+  background-color: purple !important;
+}
+
+.special-teal{
+  background-color: teal !important;
+}
+
+
+.special-red{
+  background-color: red !important;
+}
+
+.special-yellow{
+  background-color: yellow !important;
+}
+
+.special-green{
+  background-color: green !important;
+}
+
+.special-magenta{
+  background-color: magenta !important;
+}
+
+[data-new-window] {
+    display: none;
+}
+
+.container{
+  max-width: 960px;
+}
+.background{
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 655px;
+  text-align: center;
+}
+
+.playback-rates{
+  display: inline-block;
+}
+
+
+.slower{
+  margin: 0px !important;
+  height: 25px !important;
+  width: 25px !important;
+  min-width: 25px !important;
+  margin-top: 2px !important;
+}
+
+.faster{
+  margin: 0px !important;
+  height: 25px !important;
+  width: 25px !important;
+  min-width: 25px !important;
+  margin-top: 2px !important;
+}
+
+.speed-text{
+  font-weight: bold;
+  margin-left: 20px;
+}
+
+#current-speed{
+  width: 100%;
+  text-align: center;
+  margin-top:0px;
+  margin-bottom:0px;
+  font-family: "Allerta";
+  padding-right: 5px;
+  margin-top: 10px;
+  font-size: 25px;
+}
+
+.video-text{
+  font-weight: bold;
+  font-size: 12px !important;
+  text-align: center;
+  margin-top: 0px;
+  margin-bottom: 5px;
+}
+
+.beginning{
+  margin-left: 63px !important;
+}
+
+.marker{
+  padding-left: 5px !important;
+  padding-right: 5px !important;
+  width: 165px;
+}
+
+.material-icons.black600{
+  color: black;
+}
+
+.marker-text{
+  color: black;
+  font-weight: bold;
+}
+
+.marker-related{
+  margin-left: 5% !important;
+}
+
+.remove-button{
+  padding-right: 0px !important;
+}
+
+.control-buttons{
+  padding-right: 0px !important;
+}
+
+.background{
+  color: red;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.note{
+  margin-top: 10px;
+}
+
+.main-content{
+  max-height: 485px;
+}
+
+.title{
+  margin-bottom: 15px;
+  margin-top: 10px;
+  font-family: "Allerta";
+}
+
+#add-marker{
+  background-color: #5FAD46;
+}
+
+#done-marker{
+  background-color: #FF445F;
+}
+
+#remove-marker{
+  background-color: #EECB27;
+}
+
+.slow-fast {
+  padding: 5px !important;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.button-markers{
+  padding-right: 0px !important;
+}
+
+.markers-related{
+  margin-right: 20%;
+  margin-left: 20%;
+  border: solid #BEDAE5 2px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+}
+.bigger{
+  padding: 0px !important;
+}
+
+.video{
+  padding-right: 0px !important;
+}
+
+.red{
+  background-color: red;
+  width: 30px;
+  height: 15px;
+  border: solid black 1px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+}
+
+.blue{
+  background-color: blue;
+  width: 30px;
+  height: 15px;
+  border: solid black 1px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+}
+.green{
+  background-color: green;
+  width: 30px;
+  height: 15px;
+  border: solid black 1px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+}
+.purple{
+  background-color: purple;
+  width: 30px;
+  height: 15px;
+  border: solid black 1px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+}
+.yellow{
+  background-color: yellow;
+  width: 30px;
+  height: 15px;
+  border: solid black 1px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+}
+.magenta{
+  background-color: magenta;
+  width: 30px;
+  height: 15px;
+  border: solid black 1px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+}
+.teal{
+  background-color: teal;
+  width: 30px;
+  height: 15px;
+  border: solid black 1px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+}
+.orange{
+  background-color: orange;
+  width: 30px;
+  height: 15px;
+  border: solid black 1px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+}
+.side_title{
+  font-size: 20px;
+  font-weight: bold;
+  color: purple;
+  text-align: center;
+  width: 100%;
+  font-family: "Allerta";
+}
+.start-button{
+  padding-bottom: 0px !important;
+}
+.start-des{
+  padding-bottom: 0px !important;
+  padding-top: 0px !important;
+}
+.remove-button{
+  padding-bottom: 0px !important;
+}
+.remove-des{
+  padding-bottom: 0px !important;
+  padding-top: 0px !important;
+}
+.auto-loop{
+  padding-bottom: 0px !important;
+  padding-top: 0px !important;
+}
+.toggle-loop{
+  padding-bottom: 0px !important;
+}
+.toggle-count{
+  padding-bottom: 0px !important;
+}
+.countdown{
+  padding-top: 0px !important;
+}
+#description{
+  font-size: 13px;
+  color: gray;
+  border: solid #BEDAE5 2px;
+  text-align: center;
+  line-height: 16px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+  font-family: "Lato";
+}
+
+#done-text{
+  color: gray;
+}
+
+.title{
+  text-align:center;
+  width: 620px;
+  font-weight: bold;
+  margin-bottom: 34px;
+}
+.color-change{
+  font-weight: bold;
+  font-family: "Allerta";
+}
+#myTable{
+  margin-top: 12px;
+  font-family: "Allerta";
+}
+.right_title{
+  font-size: 20px;
+  font-weight: bold;
+  color: #F15A22;
+  text-align: center;
+  width: 100%;
+  margin-top: 9px;
+  padding-left: 23px;
+  font-family: "Allerta";
+}
+.restart {
+  margin-left: 44px;
+  font-weight: bold;
+  font-size: 12px;
+  display:inline-block;
+
+}
+.text{
+  width: 40px;
+  font-weight: bold;
+  font-size: 12px;
+  text-align: center;
+  display:inline-block;
+}
+
+.done{
+  margin-right: 25% !important;
+  margin-left: 25% !important;
+
+}
+.done-button{
+  margin-right: 10% !important;
+  margin-left: 10% !important;
+}
+
+#done-text{
+  margin-right: 20% !important;
+  margin-left: 40% !important;
+  font-family: "Allerta";
+}
+
+.done-m{
+  padding-left: 12% !important;
+}
+
+.font-change{
+  font-family: "Allerta";
+}

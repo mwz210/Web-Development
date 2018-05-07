@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <script>window.HELP_IMPROVE_VIDEOJS = false;</script>
+    <!-- Links to videoJS and markers -->
+      <link href="http://vjs.zencdn.net/4.3/video-js.css" rel="stylesheet">
+      <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+      <script type="text/javascript" src="video.js"></script>
+
+
+        <!-- include videojs marker src !-->
+      <script type = "text/javascript" src="videojs-markers.js"></script>
+      <link href= "videojs-markers.css" rel="stylesheet">
+      <script type= "text/javascript" src="my_code.js"></script>
+
+      <!-- Underscore -->
+      <script type = "text/javascript" src="underscore.js"></script>
+
+      <!-- Bootstrap -->
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+      <!-- Google MDL components -->
+      <link rel="stylesheet" href="./MDL/material.min.css">
+      <script src="./MDL/material.min.js"></script>
+      <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.teal-purple.min.css" />
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+      <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.teal-purple.min.css" />
+
+      <!-- fonts -->
+      <link href="https://fonts.googleapis.com/css?family=Allerta" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  </head>
+
+  <body class="vertical-center">
+    <!-- Countdown timer -->
+    <div class="container">
+      <div class="row main-content">
+        <div class="col-lg-2 marker-control d-flex justify-content-center left-sidebar">
+          <!-- marker-related -->
+          <!-- Configuration options -->
+          <div class="demo-list-action mdl-list side">
+            <div class="mdl-list__item">
+              <div class="mdl-list__item-primary-content">
+                <div class="side_title">
+                  Practice Tools
+                </div>
+              </div>
+            </div>
+
+            <div class="mdl-list__item start-button">
+              <span class="mdl-list__item-primary-content button">
+                <button id="add-marker" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect add-bookmark-here to-disable marker">
+                  <span id="start-end" class="marker-text color-change">Add Start Marker</span>
+                </button>
+                <div class="mdl-tooltip" for="add-marker">
+                  Click on this button to add a marker at current time! (Shortcut: B)
+                </div>
+              </span>
+            </div>
+
+            <div class="mdl-list__item start-des">
+              <p id="description"> Add the beginning of the section you will loop and practice!</p>
+            </div>
+
+            <div class="mdl-list__item remove-button">
+              <span class="mdl-list__item-primary-content button">
+                <button id="remove-marker" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--red-500 remove to-disable marker">
+                  <span class="marker-text color-change">Remove section</span>
+                </button>
+                <div class="mdl-tooltip" for="remove-marker">
+                  Click on this button to remove a color section! (Shortcut: R)
+                </div>
+              </span>
+            </div>
+            <div class="mdl-list__item remove-des">
+              <p id="description">Click this, then click on
+              a marker to remove that colored section!</p>
+            </div>
+
+
+            <!-- Auto-Loop Toggle -->
+            <div class="mdl-list__item toggle-loop">
+              <span class="mdl-list__item-primary-content">
+                <label id="check1" class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-1">
+                  <input type="checkbox" id="switch-1" class="mdl-switch__input" checked>
+                  <span class="mdl-switch__label color-change"> Auto-loop </span>
+                </label>
+              </span>
+            </div>
+            <div class="mdl-list__item auto-loop">
+              <br>
+              <p id="description"> Loop a color section infinitely</p>
+              <br>
+            </div>
+
+            <!-- Countdown Toggle -->
+            <div class="mdl-list__item toggle-count">
+              <span class="mdl-list__item-primary-content">
+                <label id="check2" class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-2">
+                  <input type="checkbox" id="switch-2" class="mdl-switch__input" checked>
+                  <span class="mdl-switch__label color-change">Countdown</span>
+                </label>
+              </span>
+            </div>
+            <div class="mdl-list__item countdown">
+              <p id="description">5 second countdown upon hitting a marker</p>
+            </div>
+
+            <!-- performance mode Toggle
+            <div class="mdl-list__item">
+              <span class="mdl-list__item-primary-content">
+                <label id="performance-mode" class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-3">
+                  <input type="checkbox" id="switch-3" class="mdl-switch__input" unchecked>
+                  <span class="mdl-switch__label color-change">Goal Mode</span>
+                </label>
+              </span>
+            </div>
+            -->
+          </div>
+        </div>
+
+        <div class="col-lg-7 video">
+          <h4 class="title">
+            This Game: No Game No Life
+          </h4>
+          <div class="video-container">
+            <video id="demo_video" class="video-js vjs-default-skin" controls preload="auto" width="620" height="405" data-setup='{"asdf": true}'>
+              <source src = "ThisGame_MIDI.mp4" type='video/mp4'>
+            </video>
+            <span class="background">
+              <span id="count">playing in 5 seconds, don't move...</span>
+            </span>
+          </div>
+          <dialog class="mdl-dialog">
+            <h4 class="mdl-dialog__title font-change">Well done!</h4>
+            <div class="mdl-dialog__content">
+              <p class="font-change">
+                Now get out there and show your piano skills to the world!
+              </p>
+            </div>
+            <div class="mdl-dialog__actions">
+              <button type="button" class="mdl-button close font-change">Continue</button>
+            </div>
+          </dialog>
+        </div>
+        <div class="col-lg-3 bigger">
+          <div class="mdl-list__item">
+            <div class="mdl-list__item-primary-content">
+              <div class="right_title">
+                Sections To Practice
+              </div>
+            </div>
+          </div>
+
+          <div id="myTable">
+            <table class="mdl-data-table mdl-shadow--2dp">
+              <thead>
+                <tr>
+                  <th class="smallCol">Checkbox</th>
+                  <th class="mdl-data-table__cell--non-numeric">Section</th>
+                  <th class="mdl-data-table__cell--non-numeric">Start</th>
+                  <th class="mdl-data-table__cell--non-numeric">End</th>
+                </tr>
+              </thead>
+              <tbody id="features-list">
+              </tbody>
+            </table>
+          </div>
+          <div class="mdl-list__item done-button">
+            <span class="mdl-list__item-primary-content done-m">
+              <button id="done-marker" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored done to-disable marker">
+                <span id="start-end" class="marker-text color-change">I'm Done!</span>
+              </button>
+              <div class="mdl-tooltip" for="done-marker">
+                <p> Click on this button when you're finished practicing!</p>
+              </div>
+            </span>
+          </div>
+          <div class="mdl-list_item Text">
+            <span class-"mdl-list__item-primary-content done-m">
+              <p id= "done-text"> This will delete all markers.</p>
+            </span>
+          </div>
+
+        </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-2 remove-button">
+      </div>
+      <div class="col-lg-5 control-buttons">
+        <div class="row control">
+          <div class="col-lg-8">
+            <button id="pause" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect mdl-color--red-500 pause-to to-disable">
+              <i class="material-icons">pause</i>
+            </button>
+            <div class="mdl-tooltip" for="pause">
+              Pause Video (Shortcut: Space)
+            </div>
+            <button id="start" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect mdl-color--green-500 beginning to-disable">
+              <i class="material-icons">replay</i>
+            </button>
+            <div class="mdl-tooltip" for="start">
+              Play video from beginning
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-8">
+            <div class="text font-change">Pause</div>
+            <div class="restart font-change">Restart Video</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-1 button-markers">
+          <!-- Current Playback Speed Display -->
+          <span class="video_speed">
+            <span class="video-text color-change">
+                          Video Speed
+            </span>
+            <div class="speed" id="current-speed">1.0</div>
+          </span>
+          <!--
+              <div class="button-one">
+                <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect mdl-color--blue-500 faster to-disable">
+                  <i class="material-icons">keyboard_arrow_up</i>
+                </button>
+              </div>
+              <div class="button-two">
+                <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect mdl-color--red-500 slower to-disable">
+                  <i class="material-icons">keyboard_arrow_down</i>
+                </button>
+              </div>
+            -->
+      </div>
+      <div id="speed-button" class="col-lg-3">
+        <span>
+          <div class="button-one">
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect mdl-color--blue-500 faster to-disable">
+              <i class="material-icons">keyboard_arrow_up</i>
+            </button>
+          </div>
+          <div class="button-two">
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect mdl-color--red-500 slower to-disable">
+              <i class="material-icons">keyboard_arrow_down</i>
+            </button>
+          </div>
+        </span>
+      </div>
+    </div>
+  </div>
+
+<!-- ====================================================================================== -->
+
+<!-- Snackbar -->
+<div id="demo-snackbar-example" class="mdl-js-snackbar mdl-snackbar">
+  <div class="mdl-snackbar__text"></div>
+  <button class="mdl-snackbar__action" type="button"></button>
+</div>
+
+<!-- Window -->
+<div id="demo-toast-example" class="mdl-js-snackbar mdl-snackbar">
+  <div class="mdl-snackbar__text"></div>
+  <button class="mdl-snackbar__action" type="button"></button>
+</div>
+
+<!-- ======================================================================================== -->
+
+  </body>
+</html>
