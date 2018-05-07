@@ -8,10 +8,12 @@ All the projects I have done related to Web Development
 
 * **MKV Practice Tool:** 
 
-  *Short Summary: 
+  * Short Summary: 
   
   A webpage for users that want to learn how to play music from videos more efficiently and effectively.
   Users may create color-coded sections in the video and utilize the functions of auto-looping and checklisting as they go along.
+  
+  * Installation: 
   
   Project is still in progress and have only gotten all the functionality of the video controls done. However, there isn't an easy way
   to upload and practice with your own video. If you are really interested in using it then be willing to download all the files in 
@@ -23,13 +25,15 @@ All the projects I have done related to Web Development
 
 * **Portfolio Project:** 
 
-  *Short Summary: 
+  * Short Summary: 
   
   A simple design of what my portfolio page might look like. Project is still in progress, so it will be for sometime before I fully
   finish my personal website. 
   
 * **Movie Trailer Project:** 
 
+  * Short Summary:
+  
   A quick project for users to view the trailers of their favorite movies on a webpage. If there is any interests for this project, 
   there is elaborative instructions and details in the README within this project folder.
 
