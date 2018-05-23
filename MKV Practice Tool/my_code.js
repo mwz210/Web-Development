@@ -23,10 +23,6 @@ $(document).ready(function() {
   var realCreateCountdown = _.throttle(createCountdown, 6000);
   var threeCreateCountdown = _.throttle(createThreeSecCountdown, 4000);
   var prevention = _.throttle(function(){prevent = true;}, 2000);
-  //var throttleOnMarkerReached = _.throttle(player.markers.onMarkerReached, 2000);
-
-  //setInterval(throttleOnMarkerReached, 2000);
-
   var doNotLetItGoBack = _.throttle(function(){
     doNotGoBack = false;
   }, 1000);
@@ -41,12 +37,10 @@ function updateCheckBox(headerCB) {
 	if (headerCB.checked) {
 		for (let i = 0, length = boxes.length; i < length; i++) {
 			boxes[i].MaterialCheckbox.check();
-			//rows[i].classList.add('checked');
 		}
 	} else {
 		for (let i = 0, length = boxes.length; i < length; i++) {
 			boxes[i].MaterialCheckbox.uncheck();
-			//rows[i].classList.remove('checked');
 		}
 	}
 }
@@ -56,16 +50,12 @@ function rowRemoveAll() {
 	var table = document.querySelector('table'); //get reference  of the table
 	var boxes = table.querySelectorAll('tbody .mdl-data-table__select'); // get reference of checkbox elements as a list
 	var rows = table.querySelectorAll('tbody tr'); // target rows in table body
-	//alert (boxes[2].MaterialCheckbox.inputElement_.checked.toString ())
 	for (let i = 0, length = rows.length; i < length; i++) {
-		// let tempele =boxes[i];
     var string = "#" + rows[i].id.toString();
     $(string).hide('slow', function(){
       $(string).off;
       rows[i].remove();
     });
-      //rows[i].remove();
-       // remove its corresponding row
 	}
 }
 
@@ -73,9 +63,7 @@ function rowRemove() {
 	var table = document.querySelector('table'); //get reference  of the table
 	var boxes = table.querySelectorAll('tbody .mdl-data-table__select'); // get reference of checkbox elements as a list
 	var rows = table.querySelectorAll('tbody tr'); // target rows in table body
-	//alert (boxes[2].MaterialCheckbox.inputElement_.checked.toString ())
 	for (let i = 0, length = rows.length; i < length; i++) {
-		// let tempele =boxes[i];
 		if (boxes[i].MaterialCheckbox.inputElement_.checked) // if checkbox is checked
 		{
       var string = "#" + rows[i].id.toString();
@@ -83,7 +71,6 @@ function rowRemove() {
         $(string).off;
         rows[i].remove();
       });
-      //rows[i].remove();
 		} // remove its corresponding row
 	}
 }
@@ -138,11 +125,8 @@ function freshUpdate(start, end, section) {
 	listContainer.appendChild(tmptr);
 }
 
-function addPerson(start_time, end_time, color) {
-	//alert(document.getElementById('fullName').value)
+function addMarkerList(start_time, end_time, color) {
 	freshUpdate(start_time, end_time, color);
-	//document.getElementById('fullName').reset();
-	//	document.getElementById('email').value = "";
 	return false;
 }
 
@@ -344,16 +328,12 @@ window.addEventListener('keyup', function (e) {
         start_end.innerHTML = "ADD END MARKER";
         document.getElementById("add-marker").style.backgroundColor = "yellow";
         document.getElementById("description").innerHTML = "Add the end of the section you will loop and practice!";
-        //$("#yo").append("<tr> <td class='mdl-data-table__cell--non-numeric " + last_color + "'>" + last_time + "</td><td id='"
-        //+ last_color + "-change'>90</td><td>"+ last_color + "</td></tr>");
-        -->
       }
 
       else{
         start_end.innerHTML = "ADD START MARKER";
         document.getElementById("add-marker").style.backgroundColor = "#5FAD46";
         document.getElementById("description").innerHTML = "Add the start of the section you will loop and practice!";
-        //document.getElementById("red-change").innerHTML = Math.round(last_time).toString();
       }
       if (half_section == true){
         start_time = last_time;
@@ -575,33 +555,31 @@ window.addEventListener('keyup', function (e) {
   // Create magenta marker
   $(".add-bookmark-here").click(function(){
     doNotGoBack = true;
+
+    // Creates new marker with the right color both visibly and internally.
     createNewMarker(player.currentTime());
     last_time = player.currentTime();
     last_color = player.markers.findColor(last_time);
-    last_color.replace("special-", "");
-    if (start_end.innerText == "ADD START MARKER"){
+    temp_color = last_color.replace("special-", "");
+
+    if (start_end.innerHTML == "Add Start Marker"){
       start_end.innerHTML = "ADD END MARKER";
       document.getElementById("add-marker").style.backgroundColor = "yellow";
       document.getElementById("description").innerHTML = "Add the end of the section you will loop and practice!";
-      //$("#yo").append("<tr> <td class='mdl-data-table__cell--non-numeric " + last_color + "'>" + last_time + "</td><td id='"
-      //+ last_color + "-change'>90</td><td>"+ last_color + "</td></tr>");
-      -->
     }
 
     else{
-      start_end.innerHTML = "ADD START MARKER";
+      start_end.innerHTML = "Add Start Marker";
       document.getElementById("add-marker").style.backgroundColor = "#5FAD46";
       document.getElementById("description").innerHTML = "Add the start of the section you will loop and practice!";
-      //document.getElementById("red-change").innerHTML = Math.round(last_time).toString();
     }
+
     if (half_section == true){
       start_time = last_time;
       section = true;
     }
     else if(half_section == false && section == true){
-      temp_color = last_color.replace('special-', "");
-
-      addPerson(Math.round(start_time), Math.round(last_time), temp_color);
+      addMarkerList(Math.round(start_time), Math.round(last_time), temp_color);
       section = false;
     }
 
@@ -616,8 +594,6 @@ window.addEventListener('keyup', function (e) {
         count += 1;
       }
     }
-    console.log(color);
-    console.log(count);
     if (count == 0){
       return true;
     }
@@ -855,7 +831,6 @@ function createThreeSecCountdown() {
     }
   }, 1000);
 
-//  player.off("seeking");
   blah.innerHTML = "Next Breakpoint in 3 Seconds...";
   return interval;
 }
@@ -876,9 +851,6 @@ function createCountdown() {
     counter--;
 
     if (counter >= 0) {
-
-      //span = document.getElementById("count");
-      //span2 = document.getElementById("count2");
       span.innerHTML = "playing in " + counter + " seconds, don't move...";
     }
     // Display 'counter' wherever you want to display it.
@@ -889,7 +861,6 @@ function createCountdown() {
     }
   }, 1000);
 
-//  player.off("seeking");
   span.innerHTML = "playing in 5 seconds, don't move...";
   return interval;
 }
