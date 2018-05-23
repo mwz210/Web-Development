@@ -501,17 +501,13 @@
           if (Math.abs(markerTime - currentTime) < .3){
             var myCurrentMarker = markersList[i];
             var myMarkerColor = markersList[i].class;
-            console.log("my current marker: " + myCurrentMarker.time);
           }
 
           // add a threshold
           if (markerTime + 0.5 < currentTime) {
             var theirColor = markersList[i].class;
-            console.log("their color is " + theirColor);
 
             if (myMarkerColor == theirColor){
-              console.log("all might: " + myMarkerColor);
-              console.log("deku: " + theirColor);
               return markerTime;
             }
           }

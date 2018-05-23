@@ -18,7 +18,6 @@ $(document).ready(function() {
   var doNotGoBack = false;
   var autoLoop = true;
   var autoCountdown = true;
-  var hello = false;
   var prevent = true;
   var performance_mode = false;
   var realCreateCountdown = _.throttle(createCountdown, 6000);
@@ -898,7 +897,6 @@ function createCountdown() {
 
 //===========================================================================================================
   function createNewRedMarker(currentTime) {
-    hello = true;
     player.controls(true);
     player.markers.add([{
       time: currentTime,
@@ -911,7 +909,6 @@ function createCountdown() {
 
 
   function createNewTealMarker(currentTime) {
-    hello = true;
     player.controls(true);
     player.markers.add([{
       time: currentTime,
@@ -923,7 +920,6 @@ function createCountdown() {
   }
 
   function createNewYellowMarker(currentTime) {
-    hello = true;
     player.controls(true);
     player.markers.add([{
       time: currentTime,
@@ -935,7 +931,6 @@ function createCountdown() {
   }
 
   function createNewPurpleMarker(currentTime) {
-    hello = true;
     player.controls(true);
     player.markers.add([{
       time: currentTime,
@@ -947,7 +942,6 @@ function createCountdown() {
   }
 
   function createNewOrangeMarker(currentTime) {
-    hello = true;
     player.controls(true);
     player.markers.add([{
       time: currentTime,
@@ -959,7 +953,6 @@ function createCountdown() {
   }
 
   function createNewGreenMarker(currentTime) {
-    hello = true;
     player.controls(true);
     player.markers.add([{
       time: currentTime,
@@ -972,7 +965,6 @@ function createCountdown() {
 
   //============================================================================
   function createNewBlueMarker(currentTime) {
-    hello = true;
     player.controls(true);
     player.markers.add([{
       time: currentTime,
@@ -986,7 +978,6 @@ function createCountdown() {
   //============================================================================
 
   function createNewMagentaMarker(currentTime) {
-    hello = true;
     player.controls(true);
     player.markers.add([{
       time: currentTime,
