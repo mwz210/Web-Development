@@ -20,8 +20,7 @@ All the projects I have done related to Web Development
      **MKV Practice Tool Folder** and then switch your own video with the sample video that is provided in the folder. Just make sure you 
      name the video the same name as the sample video since that part is hard coded for now. 
 
-      **Note: This project is not fully functional across all platforms or browsers. Currently, the webpage works best on Edge browser, 
-      so if it isn't working on Chrome or Firefox, definitely give it a try in edge.**
+      **Note: This project is not fully functional across all platforms or browsers. Currently, the webpage works best on Edge or Chrome browser. I'm looking into why this is the case, and hope to make it functional across all platforms.**
 
 * **Portfolio Project:** 
 
